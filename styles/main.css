@@ -523,13 +523,13 @@ a[class] {
   background-position: center;
 }
 .icon--yellow-arrow::after {
-  background-image: url(../../icons/top-right-arrow_yellow.svg);
+  background-image: url(../icons/top-right-arrow_yellow.svg);
 }
 .icon--yellow-eye::after {
-  background-image: url(../../icons/eye_yellow.svg);
+  background-image: url(../icons/eye_yellow.svg);
 }
 .icon--gray-arrow-down::after {
-  background-image: url(../../icons/bottom-arrow_gray.svg);
+  background-image: url(../icons/bottom-arrow_gray.svg);
 }
 @media (width <= 90.06125rem) {
   .icon {
