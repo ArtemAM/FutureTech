@@ -1,6 +1,8 @@
 # FutureTech – Вдохновляющий взгляд в будущее AI  
 
-![image](https://github.com/user-attachments/assets/25f45f53-befe-43d4-b1d7-754617185cb5)
+![image](https://github.com/user-attachments/assets/e5bb663a-c81a-47ea-b2c2-8ee80f3cf6c8) 
+
+**Live Demo:** [Посмотреть сайт](https://artemam.github.io/FutureTech/index.html)
 
 ---
 
@@ -40,7 +42,7 @@ npm install
 
 ## Структура проекта  
 ```sh
-FUTURETECH/ 
+futuretech/ 
 │── fonts/ # Шрифты 
 │── icons/ # Иконки 
 │── images/ # Изображения 
