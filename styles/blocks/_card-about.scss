@@ -2,6 +2,7 @@
 
 .card-about {
   display: grid;
+  height: 100%;
   row-gap: fluid(20, 10);
 
   &__title {

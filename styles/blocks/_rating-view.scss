@@ -18,17 +18,17 @@
 
     @include square(var(--iconSize));
 
-    background-image: url('../../icons/star_grey.svg');
+    background-image: url('../icons/star_grey.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
     &.is-active {
-      background-image: url('../../icons/star_yellow.svg');
+      background-image: url('../icons/star_yellow.svg');
     }
 
     @include laptop {
-      --iconSize: #{rem(20)}
+      --iconSize: #{rem(20)};
     }
   }
 }

@@ -1058,7 +1058,7 @@ a[class] {
 }
 .hero__resources-preview {
   grid-area: resources-preview;
-  background-image: url("../../images/hero/bg-image.png");
+  background-image: url("../images/hero/bg-image.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left top;
@@ -1670,17 +1670,17 @@ a[class] {
   --iconSize: 1.5rem;
   width: var(--iconSize);
   height: var(--iconSize);
-  background-image: url("../../icons/star_grey.svg");
+  background-image: url("../icons/star_grey.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .rating-view__star.is-active {
-  background-image: url("../../icons/star_yellow.svg");
+  background-image: url("../icons/star_yellow.svg");
 }
 @media (width <= 90.06125rem) {
   .rating-view__star {
-    --iconSize: 1.25rem ;
+    --iconSize: 1.25rem;
   }
 }
 
@@ -1770,6 +1770,7 @@ a[class] {
 
 .card-about {
   display: grid;
+  height: 100%;
   row-gap: clamp(0.625rem, 0.4656862745rem + 0.6535947712vw, 1.25rem);
 }
 .card-about__title {
