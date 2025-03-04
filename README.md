@@ -1,6 +1,7 @@
 # FutureTech – Вдохновляющий взгляд в будущее AI  
 
-![image](https://github.com/user-attachments/assets/e5bb663a-c81a-47ea-b2c2-8ee80f3cf6c8) 
+![image](https://github.com/user-attachments/assets/e555b66c-29b3-4eaf-a87e-0cbdcc39eebe)
+
 
 **Live Demo:** [Посмотреть сайт](https://artemam.github.io/FutureTech/index.html)
 
