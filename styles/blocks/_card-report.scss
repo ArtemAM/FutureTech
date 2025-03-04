@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.card-report {
+  display: grid;
+  row-gap: fluid(30,20);
+
+  &__image {
+    width: 100%;
+    height: rem(290);
+    object-fit: cover;
+    border-radius: rem(12);
+
+    @include tablet {
+      height: rem(165);
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(14);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(20);
+
+    @include laptop {
+      column-gap: rem(10);
+    }
+  }
+
+  &__link {
+    flex-basis: 50%;
+    max-width: rem(225);
+  }
+}

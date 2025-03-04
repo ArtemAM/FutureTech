@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.resources-preview {
+  padding-left: rem(80);
+  padding-bottom: rem(80);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  row-gap: rem(30);
+  border-left: var(--border);
+
+  @include laptop {
+    padding-left: rem(50);
+    padding-bottom: rem(50);
+    row-gap: rem(20);
+  }
+
+  @include mobile {
+    padding-left: rem(24);
+    padding-bottom: rem(40);
+    padding-right: rem(24);
+    padding-top: rem(100);
+    border-left: none;
+    margin-left: calc(var(--container-padding-x) * -1);
+  }
+  
+  &__body {
+    display: grid;
+    row-gap: rem(14);
+
+    @include laptop {
+      row-gap: rem(6);
+    }
+
+    @include laptop {
+      row-gap: rem(4);
+    }
+  }
+
+  &__button {
+    @include mobile-s {
+      width: calc(100% + var(--container-padding-x));
+    }
+  }
+}

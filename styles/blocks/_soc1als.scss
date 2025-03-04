@@ -1,0 +1,53 @@
+@use '../helpers' as *;
+
+.soc1als {
+  &--cols-3 {
+    .soc1als {
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      &__link {
+        background-color: var(--color-dark-10);
+        border: var(--border);
+        border-radius: rem(6);
+        height: rem(60);
+        width: 100%;
+
+        @include hover {
+          border-color: var(--color--accent);
+        }
+
+        @include laptop {
+          height: rem(48);
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+
+    @include laptop {
+      column-gap: rem(14);
+    }
+  }
+
+  &__link {
+    --size: #{rem(24)};
+
+    @include square(var(--size));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-light);
+
+    @include laptop{
+      --size: #{rem(20)};
+    }
+  }
+}

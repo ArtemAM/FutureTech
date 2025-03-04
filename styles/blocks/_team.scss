@@ -1,0 +1,30 @@
+@use '../helpers' as *;
+
+.team {
+  --sizeImg: #{rem(60)};
+
+  display: flex;
+  padding: rem(10);
+  background-color: var(--color-dark-10);
+  border-radius: rem(100);
+
+  &__person {
+    @include square(var(--sizeImg));
+
+    border: rem(2) solid var(--color-dark-40);
+    border-radius: 50%;
+    background-color: var(--color-dark-15);
+
+    &:not(:first-child) {
+      margin-left: calc(var(--sizeImg) / 4 * -1);
+    }
+
+    @include laptop {
+      --sizeImg: #{rem(50)};
+    }
+
+    @include laptop {
+      --sizeImg: #{rem(40)};
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.section-header {
+  border-block: var(--border);
+  background-color: var(--color-dark-10);
+
+  &__inner {
+    display: grid;
+    row-gap: rem(30);
+    padding-block: fluid(120, 40);
+
+    @include mobile-above {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(16);
+    }
+  }
+
+  &__info {
+    display: grid;
+    row-gap: rem(16);
+
+    @include mobile-above {
+      flex-basis: 65%;
+    }
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+  }
+
+  &__subtitle {
+    justify-self: start;
+  }
+
+  &__actions {
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__link {
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+}

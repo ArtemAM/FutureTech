@@ -1,0 +1,42 @@
+@use '../helpers' as *;
+
+.hero-alt {
+  &__inner {
+    display: grid;
+    padding-top: fluid(130, 40);
+    padding-bottom: fluid(150, 40);
+    gap: rem(20) rem(80);
+
+    @include laptop {
+      column-gap: rem(60);
+    }
+
+    @include mobile-above {
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+
+    @include mobile {
+      row-gap: rem(14);
+    }
+  }
+
+  &__header {
+    border-bottom: var(--border);
+  }
+
+  &__title,
+  &__subtitle {
+    @include fluid-text(80, 28);
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+
+    &-hidden-part {
+      @include mobile-above {
+        @include visually-hidden;
+      }
+    }
+  }
+}

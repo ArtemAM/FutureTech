@@ -1,0 +1,43 @@
+@use '../helpers' as *;
+
+.card-person {
+  --imageSize: #{rem(60)};
+
+  display: flex;
+  align-items: center;
+  column-gap: rem(12);
+
+  @include laptop {
+    --imageSize: #{rem(50)};
+
+    column-gap: rem(10);
+  }
+
+  &__info {
+    display: grid;
+
+    @include laptop-above {
+      row-gap: rem(2);
+    }
+  }
+
+  &__name {
+    color: var(--color-light);
+    font-size: rem(20);
+    font-weight: 500;
+    letter-spacing: 0;
+
+    @include laptop {
+      font-size: rem(18);
+    }
+  }
+
+  &__info {
+    letter-spacing: 0;
+  }
+
+  &__image {
+    @include flex-center;
+    @include square(var(--imageSize))
+  }
+}

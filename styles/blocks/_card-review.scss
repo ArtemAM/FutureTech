@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.card-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(40);
+
+  @include laptop {
+    row-gap: rem(30);
+  }
+
+  &__body {
+    position: relative;
+    padding: rem(30);
+    padding-top: rem(50);
+    max-width: rem(465);
+
+    @include laptop {
+      padding: rem(24);
+      padding-top: rem(40);
+    }
+
+    @include mobile {
+      padding: rem(20);
+      padding-top: rem(30);
+    }
+  }
+
+  &__rating-view {
+    @include abs-center;
+
+    top: 0;
+  }
+
+  &__description {
+    text-align: center;
+    color: var(--color-light);
+    letter-spacing: 0;
+  }
+}

@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.card-about {
+  display: grid;
+  row-gap: fluid(20, 10);
+
+  &__title {
+    @include fluid-text(22, 16);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(1);
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--color-light);
+  }
+}

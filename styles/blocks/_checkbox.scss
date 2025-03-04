@@ -1,0 +1,69 @@
+@use '../helpers' as *;
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+  
+
+  @include hover {
+    .checkbox {
+      &__label {
+        color: var(--color-accent);
+      }
+
+      &__input {
+        border-color: var(--color-accent);
+      }
+    }
+  }
+
+  @include laptop {
+    column-gap: rem(6);
+  }
+
+  &__label {
+    color: var(--color-light);
+    line-height: 0;
+    transition-duration: var(--transition-duration);
+  }
+
+  &__input {
+    --size: #{rem(28)};
+
+    @include flex-center;
+
+    @include square(var(--size));
+
+    appearance: none;
+    border: var(--border);
+    border-radius: rem(4);
+    background-color: var(--color-dark-10);
+    margin: 0;
+
+    @include laptop {
+      --size: #{rem(24)};
+    }
+
+    &:user-invalid {
+      border-color: var(--color-red);
+    }
+
+    &:not(:checked) {
+      &::after {
+        @include hide;
+      }
+    }
+
+    &::after {
+      content: '';
+      color: var(--color-light);
+      transition-duration: var(--transition-duration);
+      width: 10px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+ }
+}

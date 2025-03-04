@@ -1,0 +1,122 @@
+@use '../helpers' as *;
+
+.hero {
+  &__main {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+      'body resources-preview'
+      'metrics resources-preview';
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__body {
+    grid-area: body;
+    padding-top: rem(150);
+    padding-bottom: rem(100);
+    padding-right: rem(50);
+    border-bottom: var(--border);
+
+    @include laptop {
+      padding-top: rem(100);
+      padding-right: rem(40);
+    }
+
+    @include mobile {
+      padding-right: rem(0);
+      padding-block: rem(30);
+    }
+
+    &-subtitle {
+      font-family: var(--font-family-minor);
+      font-size: fluid(30, 18);
+      font-weight: 500;
+      line-height: 120%;
+
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+
+        @include laptop {
+          margin-bottom: rem(20);
+        }
+
+        @include mobile {
+          margin-bottom: rem(14);
+        }
+      }
+    }
+
+    &-title {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include laptop {
+          margin-bottom: rem(14);
+        }
+
+        @include mobile {
+          margin-bottom: rem(10);
+        }
+      }
+    }
+  }
+
+  &__metrics {
+    grid-area: metrics;
+  }
+
+  &__resources-preview {
+    grid-area: resources-preview;
+    
+    background-image: url('../../images/hero/bg-image.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+  }
+
+  &__advantages {
+    border-top: var(--border);
+
+    &-list {
+      display: grid;
+      
+      @include tablet-above {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &-item {
+      padding-block: rem(30);
+
+      &:not(:last-child) {
+        border-bottom: var(--border);
+      }
+
+      @include laptop-above {
+        padding: rem(50) rem(80);
+      }
+
+      @include tablet-above {
+        padding: rem(40) rem(50);
+        
+
+        &:first-child {
+          padding-left: rem(0);
+        }
+
+        &:last-child {
+          padding-right: rem(0);
+        }
+
+        &:not(:last-child) {
+          border-right: var(--border);
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../helpers' as *;
+
+.card-blog {
+  display: grid;
+  grid-template-columns: 24% 1fr auto;
+  column-gap: fluid(50, 22);
+  padding-block: fluid(80, 40);
+
+  @include tablet {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+      'person actions'
+      'body body'  
+    ;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(30);
+
+    @include laptop {
+      row-gap: rem(24);
+    }
+
+    @include tablet {
+      grid-area: body;
+    }
+
+    @include mobile {
+      row-gap: rem(20);
+    }
+  }
+
+  &__info {
+    display: grid;
+    row-gap: rem(10);
+
+    @include laptop {
+      row-gap: rem(8);
+    }
+
+    @include mobile {
+      row-gap: rem(4);
+    }
+  }
+
+  &__actions {
+    align-self: center;
+
+    @include tablet {
+      grid-area: actions;
+    }
+  }
+
+  &__person {
+    align-self: start;
+
+    @include tablet {
+      grid-area: person;
+    }
+  }
+}

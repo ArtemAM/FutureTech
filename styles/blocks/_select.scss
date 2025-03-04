@@ -1,0 +1,94 @@
+@use '../helpers' as *;
+
+.select {
+  position: relative;
+  min-width: rem(100);
+
+  @include laptop {
+    min-width: rem(78);
+  }
+
+  &__button,
+  &__option {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: rem(18);
+    
+    @include laptop {
+      column-gap: rem(2);
+      padding-inline: rem(12);
+    }
+
+    &::after {
+      --size: #{rem(24)};
+
+      @include square(var(--size));
+
+      content: '';
+      background: url(../../icons/bottom-arrow_down.svg) center/contain no-repeat;
+      transition-duration: var(--transition-duration);
+
+      @include laptop {
+        --size: #{rem(20)};
+      }
+    }
+
+    &.is-expanded {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + rem(2));
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    border-top: none;
+    border-radius: rem(7);
+    width: rem(100);
+    transition-duration: var(--transition-duration);
+    transform-origin: 0 0;
+
+    @include laptop {
+      width: rem(78);
+    }
+
+    &:not(.is-expanded) {
+      @include hide;
+
+      scale: 0;
+    }
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: rem(12);
+    padding-block: rem(12);
+    border: var(--border);
+    border-radius: rem(7);
+
+    @include hover {
+      border-color: var(--color-accent);
+    }
+
+    &[aria-selected="true"] {
+      pointer-events: none;
+      background-color: var(--color-dark) !important;
+      color: var(--color-accent);
+
+      &::after {
+        content: '✔';
+      }
+    }
+  }
+}

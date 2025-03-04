@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.card-contact {
+  display: grid;
+  row-gap: fluid(50, 20);
+
+  &__title {
+    font-family: var(--font-family-base);
+  }
+
+  &__body {
+    display: grid;
+    row-gap: rem(15);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+  }
+}

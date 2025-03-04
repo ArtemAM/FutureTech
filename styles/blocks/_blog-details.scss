@@ -1,0 +1,143 @@
+@use '../helpers' as *;
+
+.blog-details {
+  &__banner {
+    display: flex;
+    align-items: end;
+    padding-block: fluid(65, 17);
+    min-height: fluid(598, 281);
+    text-align: center;
+    background:
+      linear-gradient(
+      180deg,
+      rgba(20, 20, 20, 0) 0%,
+      rgba(20, 20, 20, 0.88) 75.52%,
+      #141414 100%
+      ),
+      var(--bgImg) center/cover no-repeat;
+  }
+
+  &__title {
+    @include fluid-text(64, 28);
+
+    font-weight: 600;
+  }
+
+  &__body {
+    border-block: var(--border);
+
+    &-inner {
+      display: grid;
+      grid-template-columns: 67% auto;
+
+      @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__content {
+    @include tablet-above {
+      border-right: var(--border);   
+    }
+  }
+
+  &__intro,
+  &__main,
+  &__actions,
+  &__summary {
+    padding-block: fluid(80, 40);
+  }
+
+  &__intro,
+  &__actions,
+  &__summary {
+    @include tablet{
+      @include full-vw-centered-line(bottom)
+    }
+  }
+
+  &__intro,
+  &__main {
+    padding-right: rem(80);
+
+    @include laptop {
+      padding-right: rem(60);
+    }
+
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+
+  &__intro,
+  &__actions {
+    @include tablet-above {
+      border-bottom: var(--border);
+    }
+  }
+
+  &__actions,
+  &__summary {
+    padding-left: rem(80);
+
+    @include laptop {
+      padding-left: rem(60);
+    }
+
+    @include tablet {
+      padding-left: 0;
+    }
+  }
+  
+
+  &__intro {
+    display: grid;
+    row-gap: rem(14);
+
+    @include laptop {
+      row-gap: rem(6);
+    }
+  }
+
+  &__main {
+    --maxHeight: #{rem(741)};
+
+    display: grid;
+    row-gap: fluid(24, 14);
+
+    P {
+      margin-bottom: 0;
+    }
+
+    &-subtitle {
+      @include fluid-text(28, 18);
+
+      font-family: var(--font-family-base);
+      font-weight: 500;
+    }
+
+    @include laptop {
+      --maxHeight: #{rem(745)};
+    }
+
+    @include laptop {
+      --maxHeight: #{rem(669)};
+    }
+  }
+
+  &__actions {
+    padding-block: fluid(50, 20);
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__read-full-button {
+    justify-self: center;
+    color: var(--color-gray-60);
+  }
+}

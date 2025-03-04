@@ -1,0 +1,92 @@
+@use '../helpers' as *;
+
+.accordion {
+  display: grid;
+  row-gap: fluid(30, 20);
+
+  &__item {
+    padding: rem(34);
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    border-radius: rem(12);
+
+    @include laptop {
+      padding: rem(24);
+      border-radius: rem(10);
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 0;
+
+    &.is-expanded {
+      pointer-events: none;
+      &::after {
+        rotate: 0deg;
+      }
+
+      &::after,
+      &::before {
+        background-color: var(--color-light);
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      background-color: var(--color-accent);
+      width: rem(16);
+      height: rem(2);
+      border-radius: 1rem;
+      transition-duration: var(--transition-duration);
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+
+  &__title {
+    font-size: rem(20);
+    font-weight: 500;
+    letter-spacing: 0;
+
+    @include laptop {
+      font-size: rem(16);
+    }
+  }
+
+  &__content {
+    --offsetTop: #{rem(24)};
+
+    @include hide;
+
+    max-height: 0;
+
+    @include laptop {
+      --offsetTop: #{rem(20)};
+    }
+
+    @include mobile {
+      --offsetTop: #{rem(16)};
+    }
+
+    &.is-expanded {
+      @include show;
+      
+      max-height: rem(300);
+      margin-top: var(--offsetTop);
+      padding-top: var(--offsetTop);
+      border-top: var(--border);
+    }
+  }
+}

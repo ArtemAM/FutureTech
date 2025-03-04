@@ -1,0 +1,85 @@
+@use '../helpers' as *;
+
+.metrics {
+  --columns: 3;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    @include laptop {
+      padding: rem(30) rem(40);
+      row-gap: rem(2);
+    }
+
+    @include mobile {
+      padding: rem(20);
+      row-gap: rem(10);
+    }
+
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+
+    &:first-child {
+      padding-left: rem(0);
+    }
+  }
+
+  &__value {
+    font-size: fluid(40, 24);
+    font-weight: 600;
+    color: var(--color-light);
+  }
+
+  &__key {
+    font-size: rem(14);
+  }
+
+  &__sign {
+    color: var(--color-accent);
+  }
+
+  &--cols-4 {
+    text-align: center;
+
+    .metrics {
+      &__list {
+        --columns: 4;
+  
+        @include tablet {
+          --columns: 2;
+        }
+      }
+
+      &__item {
+        padding-block: rem(80);
+
+        &:nth-child(4n) {
+          padding-right: 0;
+        }
+  
+        @include laptop {
+          padding: rem(60) rem(50);
+        }
+  
+        @include tablet {
+          padding: rem(20);
+          border-bottom: var(--border);
+
+          &:nth-child(even) {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
